@@ -1,58 +1,164 @@
-# 🎓 Student Portal | Modern Student Management System
+# 🎓 Student Portal – Full Stack Web Application
 
-Student Portal is a sleek, high-performance student management portal designed for administrators to manage student records with ease. Built with a focus on **One UI** consistency, it provides a seamless experience from landing to dashboard using PHP and Tailwind CSS.
+## 📌 Project Overview
 
-![UI Style: Modern Minimalist](https://img.shields.io/badge/UI_Style-Modern_Minimalist-indigo)
-![Framework: Tailwind CSS](https://img.shields.io/badge/Framework-Tailwind_CSS-blue)
-![Backend: PHP/MySQL](https://img.shields.io/badge/Backend-PHP%2FMySQL-777bb4)
+The **Student Portal** is a full-stack web application developed using **HTML, Tailwind CSS, JavaScript, PHP, and MySQL**.
+It allows authenticated users to manage student records securely through a web-based interface.
 
----
-
-## ✨ Key Features
-
-* **Unified UI Design:** Consistent "One UI" experience across all pages (Login, Dashboard, Forms).
-* **Responsive Dashboard:** A mobile-friendly layout with a professional sidebar navigation.
-* **Dynamic Search:** Quick filtering for student records.
-* **Full CRUD Functionality:** Add, view, edit, and delete student data effortlessly.
-* **Modern UX:** Features include glassmorphism navbars, soft shadows, and high-quality Inter typography.
+This project is designed for **academic submission**, **lab exams**, and **viva**, fulfilling all required criteria such as authentication, CRUD operations, search functionality, and security measures.
 
 ---
 
-## 🛠️ Technology Stack
+## 🛠 Technology Stack
 
-| Layer | Technology |
-| :--- | :--- |
-| **Frontend** | [Tailwind CSS](https://tailwindcss.com/), HTML5, FontAwesome Icons |
-| **Typography** | Inter Font Family (via Google Fonts) |
-| **Backend** | PHP 8.x |
-| **Database** | MySQL |
+* **Frontend:** HTML, CSS, JavaScript
+* **Backend:** PHP
+* **Database:** MySQL
+* **Server:** XAMPP (Apache + MySQL)
 
 ---
 
-## 🚀 Getting Started
+## 📂 Folder Structure
 
-### 1. Prerequisites
-* A local server environment (XAMPP, WAMP, or MAMP).
-* PHP 7.4 or higher installed.
+```
+student_portal/
+│
+├── database/
+│   └── student_portal.sql
+│
+├── includes/
+│   ├── db.php
+│   └── auth.php
+│
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── script.js
+│
+├── index.php
+├── register.php
+├── login.php
+├── dashboard.php
+├── add_student.php
+├── edit_student.php
+├── delete_student.php
+├── logout.php
+│
+└── README.md
+```
 
-### 2. Database Setup
-1. Create a database named `student_portal` in your phpMyAdmin.
-2. Import the provided SQL file or create the `students` & `users` table:
-   ```sql
-   CREATE TABLE users (
-   id INT AUTO_INCREMENT PRIMARY KEY,
-   name VARCHAR(100) NOT NULL,
-   email VARCHAR(100) UNIQUE NOT NULL,
-   password VARCHAR(255) NOT NULL
-   );
-   
-   CREATE TABLE students (
-   id INT AUTO_INCREMENT PRIMARY KEY,
-   user_id INT NOT NULL,
-   student_name VARCHAR(100) NOT NULL,
-   roll VARCHAR(50) NOT NULL,
-   department VARCHAR(100) NOT NULL,
-   semester VARCHAR(50) NOT NULL,
-   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
-   );
+---
+
+## 🌐 Application Pages
+
+| Page           | Description            |
+| -------------- | ---------------------- |
+| Home           | Portal introduction    |
+| Register       | User registration      |
+| Login          | User authentication    |
+| Dashboard      | View & search students |
+| Add Student    | Create student record  |
+| Edit Student   | Update student details |
+| Delete Student | Remove student record  |
+| Logout         | End user session       |
+
+---
+
+## 🔐 Features
+
+* User registration & login
+* Secure password hashing
+* Session-based authentication
+* CRUD operations on student records
+* Search students by name
+* Input validation
+* SQL injection prevention
+* Access control for protected pages
+
+---
+
+## 🗄 Database Design
+
+### Tables
+
+* **users** – stores user authentication data
+* **students** – stores student records linked to users
+
+---
+
+## 🚀 How to Run the Project
+
+1. Install **XAMPP**
+2. Start **Apache** and **MySQL**
+3. Copy the project folder to:
+
+   ```
+   C:\xampp\htdocs\student_portal
+   ```
+4. Open **phpMyAdmin**
+5. Import:
+
+   ```
+   database/student_portal.sql
+   ```
+6. Open browser and visit:
+
+   ```
+   http://localhost/student_portal/
+   ```
+
+---
+
+## 🔍 Endpoints (Summary)
+
+| Method     | URL                       |
+| ---------- | ------------------------- |
+| GET        | /index.php                |
+| GET / POST | /register.php             |
+| GET / POST | /login.php                |
+| GET        | /dashboard.php            |
+| GET / POST | /add_student.php          |
+| GET / POST | /edit_student.php?id=ID   |
+| GET        | /delete_student.php?id=ID |
+| GET        | /logout.php               |
+
+---
+
+## 🛡 Security Measures
+
+* Password hashing using `password_hash()`
+* Password verification using `password_verify()`
+* Prepared SQL statements
+* Session validation for protected routes
+* Output escaping to prevent XSS
+
+---
+
+## 🎓 Academic Use
+
+This project satisfies the requirements for:
+
+* Full-stack web development assignment
+* Database management project
+* PHP & MySQL lab exam
+* Viva and project demonstration
+
+---
+
+## ✨ Future Enhancements
+
+* Admin panel
+* Role-based access control
+* Bootstrap UI
+* REST API integration
+* Pagination and advanced filters
+
+---
+
+## 👨‍💻 Author
+
+**Student Portal Project**
+Developed for educational purposes using PHP & MySQL.
+
+---
