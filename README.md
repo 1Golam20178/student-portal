@@ -11,7 +11,7 @@ This project is designed for **academic submission**, **lab exams**, and **viva*
 
 ## 🛠 Technology Stack
 
-* **Frontend:** HTML, CSS, JavaScript
+* **Frontend:** HTML, Tailwind CSS, JavaScript
 * **Backend:** PHP
 * **Database:** MySQL
 * **Server:** XAMPP (Apache + MySQL)
