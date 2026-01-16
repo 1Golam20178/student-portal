@@ -37,7 +37,7 @@ Student Portal is a sleek, high-performance student management portal designed f
 
 ### 2. Database Setup
 1. Create a database named `student_portal` in your phpMyAdmin.
-2. Import the provided SQL file or create the `students` table:
+2. Import the provided SQL file or create the `students` & `users` table:
    ```sql
    CREATE TABLE users (
    id INT AUTO_INCREMENT PRIMARY KEY,
