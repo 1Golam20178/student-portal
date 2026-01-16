@@ -1,6 +1,6 @@
-# 🎓 EduPortal | Modern Student Management System
+# 🎓 Student Portal | Modern Student Management System
 
-EduPortal is a sleek, high-performance student management portal designed for administrators to manage student records with ease. Built with a focus on **One UI** consistency, it provides a seamless experience from landing to dashboard using PHP and Tailwind CSS.
+Student Portal is a sleek, high-performance student management portal designed for administrators to manage student records with ease. Built with a focus on **One UI** consistency, it provides a seamless experience from landing to dashboard using PHP and Tailwind CSS.
 
 ![UI Style: Modern Minimalist](https://img.shields.io/badge/UI_Style-Modern_Minimalist-indigo)
 ![Framework: Tailwind CSS](https://img.shields.io/badge/Framework-Tailwind_CSS-blue)
@@ -39,10 +39,20 @@ EduPortal is a sleek, high-performance student management portal designed for ad
 1. Create a database named `student_portal` in your phpMyAdmin.
 2. Import the provided SQL file or create the `students` table:
    ```sql
+   CREATE TABLE users (
+   id INT AUTO_INCREMENT PRIMARY KEY,
+   name VARCHAR(100) NOT NULL,
+   email VARCHAR(100) UNIQUE NOT NULL,
+   password VARCHAR(255) NOT NULL
+   );
+   
    CREATE TABLE students (
-       id INT AUTO_INCREMENT PRIMARY KEY,
-       student_name VARCHAR(100),
-       roll VARCHAR(50),
-       department VARCHAR(50),
-       semester VARCHAR(50)
+   id INT AUTO_INCREMENT PRIMARY KEY,
+   user_id INT NOT NULL,
+   student_name VARCHAR(100) NOT NULL,
+   roll VARCHAR(50) NOT NULL,
+   department VARCHAR(100) NOT NULL,
+   semester VARCHAR(50) NOT NULL,
+   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
    );
